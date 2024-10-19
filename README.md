@@ -17,6 +17,25 @@ public class AdaptiveGigaBiba : MonoBehaviour
     private int obstacleAvoidanceAttempts = 0; 
     private const int maxAvoidanceAttempts = 3; 
 
+    using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class AdaptiveGigaBiba : MonoBehaviour
+{
+    public Transform[] waypoints;
+    public float detectionRadius = 5f;
+    public float npcAvoidanceRadius = 3f;
+    public float obstacleDetectionDistance = 2f;
+    public float rainDetectionDistance = 10f;
+    public float vehicleDetectionRadius = 5f;
+    public float avoidanceDistance = 5f; 
+    private NavMeshAgent agent;
+    private int currentWaypointIndex = 0;
+    private int obstacleAvoidanceAttempts = 0; 
+    private const int maxAvoidanceAttempts = 3; 
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
